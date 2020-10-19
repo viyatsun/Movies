@@ -17,7 +17,7 @@ class App extends React.Component {
       movies: [],
       moviesWillWatch: [],
       sort_by: 'popularity.desc',
-      number_page: 3
+      number_page: 1
     };
   }
   componentDidMount() {
