@@ -36,11 +36,9 @@ class App extends React.Component {
   getMovies = () => {
     fetch(`${API_URL}/discover/movie?api_key=${API_KEY_3}&sort_by=${this.state.sort_by}&page=${this.state.number_page}`)
       .then((response) => {
-        console.log('then')
         return response.json()
       })
       .then((data) => {
-        console.log('data', data)
         this.setState({
           movies: data.results
         })
@@ -48,9 +46,7 @@ class App extends React.Component {
   }
 
   deleteMovie = movie => {
-    console.log(movie.id);
     const updateMovies = this.state.movies.filter(item => item.id !== movie.id);
-    console.log(updateMovies);
 
     // this.state.movies = updateMovies;
     this.setState({
@@ -102,7 +98,6 @@ class App extends React.Component {
 
 
   render() {
-    console.log("render", this);
     return (
       <div className="container">
         <div className="row mt-4">
